@@ -99,9 +99,10 @@
       </div>
     </div>
     
-    <!-- Scroll to top button (Modern Glassmorphism) -->
-    <button onclick="window.scrollTo(0,0)" class="absolute right-6 md:right-12 -top-6 w-14 h-14 rounded-full bg-primary border-4 border-[#020617] text-[#020617] flex items-center justify-center hover:bg-primaryHover transition-all duration-300 shadow-glow group">
-      <i class="fa-solid fa-chevron-up text-lg transform group-hover:-translate-y-1 transition-transform"></i>
-    </button>
   </div>
 </footer>
+
+<!-- Scroll to top button (Floating) -->
+<button id="scroll-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-8 right-8 z-50 w-14 h-14 rounded-full bg-primary text-[#020617] flex items-center justify-center hover:bg-primaryHover hover:-translate-y-1 active:scale-95 transition-all duration-300 shadow-glow">
+  <i class="fa-solid fa-chevron-up text-lg"></i>
+</button>
