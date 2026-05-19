@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services - Amer Amma</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FBBF24',
+            primaryHover: '#F59E0B',
+            secondary: '#0F172A',
+            footer: '#020617',
+            accent: '#EF4444',
+            accentHover: '#DC2626',
+            surface: '#F8FAFC',
+          },
+          boxShadow: {
+            'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',
+            'glow': '0 0 20px rgba(251, 191, 36, 0.3)',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-surface text-slate-800">
+  
+  <!-- Header Component (Dynamic Loader) -->
+  <div id="header"></div>
+
+  <!-- Page Header / Breadcrumb Banner -->
+  <section class="relative pt-20">
+    <div class="h-[180px] md:h-[220px] relative w-full overflow-hidden flex items-center bg-secondary">
+      <!-- Background pattern/glow overlay -->
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[100px] pointer-events-none"></div>
+      <div class="absolute bottom-0 right-0 w-80 h-80 bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
+      
+      <!-- Content -->
+      <div class="relative z-10 container mx-auto px-6 max-w-7xl flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div>
+          <h1 class="text-3xl md:text-4xl font-extrabold text-white uppercase tracking-wide">
+            Our Services
+          </h1>
+          <p class="text-primary text-xs font-semibold uppercase tracking-wider mt-1">
+            Industry-leading engineering, fabrication, and custom build services
+          </p>
+        </div>
+        
+        <!-- Breadcrumbs inside banner -->
+        <div class="text-sm text-slate-300 font-medium bg-white/5 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10 w-max flex items-center gap-2">
+          <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+          <span class="text-slate-500">></span>
+          <span class="text-primary font-semibold">Services</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Grid Section -->
+  <section class="py-24 bg-white">
+    <div class="container mx-auto px-6 max-w-7xl">
+      <!-- Grid layout matching the screenshot exactly -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+        
+        <!-- Service Card 1: Automobile Body Building -->
+        <a href="automobile-body-building.html" class="block bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-soft hover:-translate-y-1.5 flex flex-col items-center text-center relative overflow-hidden border-b-4 border-primary group">
+          <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary text-2xl mb-6 transition-transform duration-300 group-hover:scale-110">
+            <i class="fa-solid fa-truck-monster"></i>
+          </div>
+          <h3 class="text-xl lg:text-2xl font-bold text-secondary mb-4 group-hover:text-primary transition-colors">
+            Automobile Body Building
+          </h3>
+          <p class="text-slate-500 text-sm leading-relaxed max-w-xs">
+            Power & Energy development is a field focused on making available sufficient primary energy sources
+          </p>
+        </a>
+
+        <!-- Service Card 2: Trailer Manufacturing -->
+        <a href="trailer-manufacturing.html" class="block bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-soft hover:-translate-y-1.5 flex flex-col items-center text-center relative overflow-hidden border-b-4 border-transparent hover:border-primary group">
+          <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary text-2xl mb-6 transition-transform duration-300 group-hover:scale-110">
+            <i class="fa-solid fa-trailer"></i>
+          </div>
+          <h3 class="text-xl lg:text-2xl font-bold text-secondary mb-4 group-hover:text-primary transition-colors">
+            Trailer Manufacturing
+          </h3>
+          <p class="text-slate-500 text-sm leading-relaxed max-w-xs">
+            The Petroleum industry include the global processes of exploration, extraction, refining, transporting.
+          </p>
+        </a>
+
+        <!-- Service Card 3: Heavy Fabrication -->
+        <a href="heavy-fabrication.html" class="block bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-soft hover:-translate-y-1.5 flex flex-col items-center text-center relative overflow-hidden border-b-4 border-transparent hover:border-primary group">
+          <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary text-2xl mb-6 transition-transform duration-300 group-hover:scale-110">
+            <i class="fa-solid fa-industry"></i>
+          </div>
+          <h3 class="text-xl lg:text-2xl font-bold text-secondary mb-4 group-hover:text-primary transition-colors">
+            Heavy Fabrication
+          </h3>
+          <p class="text-slate-500 text-sm leading-relaxed max-w-xs">
+            Mechanical engineers are constantly the boundaries efficient machines and mechanical systems.
+          </p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Component (Dynamic Loader) -->
+  <div id="footer"></div>
+
+  <!-- Dynamic Component Loader Script -->
+  <script>
+    async function loadComponent(id, file) {
+      try {
+        const response = await fetch(file);
+        if (!response.ok) throw new Error('Network response was not ok');
+        const text = await response.text();
+        document.getElementById(id).innerHTML = text;
+      } catch (error) {
+        console.error(`Error loading component ${file}:`, error);
+      }
+    }
+
+    // Initialize components
+    async function init() {
+      await loadComponent('header', 'components/header.html');
+      await loadComponent('footer', 'components/footer.html');
+      
+      // Update active state in nav for Services link
+      setTimeout(() => {
+        const navLinks = document.querySelectorAll('header nav a');
+        navLinks.forEach(link => {
+          if (link.textContent.trim() === 'Services') {
+            link.classList.remove('text-slate-300', 'hover:text-white');
+            link.classList.add('text-primary');
+          } else if (link.textContent.trim() === 'Home') {
+            link.classList.remove('text-primary');
+            link.classList.add('text-slate-300', 'hover:text-white');
+          }
+        });
+      }, 500); // small delay to ensure header is fully loaded
+    }
+
+    init();
+  </script>
+</body>
+</html>

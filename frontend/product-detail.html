@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Detail - Amer Amma</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FBBF24',
+            primaryHover: '#F59E0B',
+            secondary: '#0F172A',
+            footer: '#020617',
+            accent: '#EF4444',
+            accentHover: '#DC2626',
+            surface: '#F8FAFC',
+          },
+          boxShadow: {
+            'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',
+            'glow': '0 0 20px rgba(251, 191, 36, 0.3)',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-surface text-slate-800 flex flex-col min-h-screen">
+  
+  <!-- Header Component (Dynamic Loader) -->
+  <div id="header"></div>
+
+  <!-- Page Header / Breadcrumb Banner -->
+  <section class="relative pt-20">
+    <div class="h-[180px] md:h-[220px] relative w-full overflow-hidden flex items-center bg-secondary">
+      <!-- Dark Overlay / Gradient -->
+      <div class="absolute inset-0 bg-gradient-to-r from-[#020617] via-[#020617]/90 to-transparent"></div>
+      
+      <!-- Content Container -->
+      <div class="relative z-10 container mx-auto px-6 max-w-7xl flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div>
+          <h1 id="banner-title" class="text-3xl md:text-4xl font-extrabold text-white uppercase tracking-wide">
+            Product Details
+          </h1>
+          <p id="banner-subtitle" class="text-primary text-xs font-semibold uppercase tracking-wider mt-1">
+            Premium Commercial Transport Engineering
+          </p>
+        </div>
+        
+        <!-- Breadcrumbs inside banner -->
+        <div id="breadcrumbs" class="text-sm text-slate-300 font-medium bg-white/5 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10 w-max flex items-center gap-2">
+          <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+          <span class="text-slate-500">></span>
+          <a id="breadcrumb-parent-link" href="products.html" class="hover:text-primary transition-colors">Products</a>
+          <span class="text-slate-500">></span>
+          <span id="breadcrumb-child-title" class="text-primary font-semibold">Detail</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Container -->
+  <main class="flex-grow py-16 bg-white">
+    <div class="container mx-auto px-6 max-w-4xl">
+      <!-- Product Showcase Image -->
+      <div class="rounded-3xl overflow-hidden shadow-soft mb-8 bg-slate-100 max-h-[520px] flex items-center justify-center border border-slate-100">
+        <img id="product-image" src="" alt="" class="w-full h-full object-cover">
+      </div>
+
+      <!-- Meta Data Row -->
+      <div class="flex flex-wrap items-center gap-6 text-slate-500 text-sm mb-6 border-b border-slate-100 pb-6">
+        <span class="flex items-center gap-2">
+          <i class="fa-regular fa-clock text-primary"></i> <span id="product-date">October 14, 2023</span>
+        </span>
+        <span class="flex items-center gap-2">
+          <i class="fa-solid fa-tag text-primary"></i> <span id="product-category">Products</span>
+        </span>
+        <span class="flex items-center gap-2">
+          <i class="fa-regular fa-comment text-primary"></i> <span id="product-comments">0 Comments</span>
+        </span>
+      </div>
+      <!-- Product Description / Specifications removed for layout compliance -->
+
+      <!-- Social Share Bar & Pagination -->
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-6 border-y border-slate-100 py-6 mb-12">
+        <!-- Share Social Media Icons -->
+        <div class="flex items-center gap-3">
+          <span class="text-sm font-semibold text-slate-400 uppercase mr-2">Share:</span>
+          <a href="#" class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:bg-[#3b5998] hover:text-white transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:bg-[#1da1f2] hover:text-white transition-colors"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:bg-[#db4437] hover:text-white transition-colors"><i class="fa-brands fa-google-plus-g"></i></a>
+          <a href="#" class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:bg-[#0077b5] hover:text-white transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+
+        <!-- Pagination Navigation -->
+        <div class="flex items-center gap-4">
+          <a id="prev-product-link" href="#" class="text-sm font-bold text-slate-500 hover:text-primary transition-colors flex items-center gap-1">
+            <i class="fa-solid fa-chevron-left text-xs"></i> Prev
+          </a>
+          <a id="next-product-link" href="#" class="text-sm font-bold text-slate-500 hover:text-primary transition-colors flex items-center gap-1">
+            Next <i class="fa-solid fa-chevron-right text-xs"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Leave A Reply Section -->
+      <div class="bg-slate-50 rounded-3xl p-8 border border-slate-100">
+        <h3 class="text-2xl font-bold text-secondary mb-2">Leave A Reply</h3>
+        <p class="text-slate-400 text-xs mb-8">Your email address will not be published.</p>
+
+        <form onsubmit="event.preventDefault(); alert('Comment submitted for moderation!'); event.target.reset();" class="space-y-6">
+          <div>
+            <textarea required rows="6" placeholder="Enter Your Comment*" class="w-full px-4 py-3 border border-slate-300 rounded-2xl bg-white focus:outline-none focus:ring-2 focus:ring-primary/45 focus:border-primary transition-all duration-300 text-sm placeholder:text-slate-400"></textarea>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <input type="text" required placeholder="Your Name*" class="w-full px-4 py-3 border border-slate-300 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-primary/45 focus:border-primary transition-all duration-300 text-sm placeholder:text-slate-400">
+            <input type="email" required placeholder="Email Address*" class="w-full px-4 py-3 border border-slate-300 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-primary/45 focus:border-primary transition-all duration-300 text-sm placeholder:text-slate-400">
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <input type="url" placeholder="Website" class="w-full px-4 py-3 border border-slate-300 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-primary/45 focus:border-primary transition-all duration-300 text-sm placeholder:text-slate-400">
+            <input type="tel" placeholder="Phone Num" class="w-full px-4 py-3 border border-slate-300 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-primary/45 focus:border-primary transition-all duration-300 text-sm placeholder:text-slate-400">
+          </div>
+
+          <div class="flex items-start gap-3">
+            <input type="checkbox" id="save-info" class="mt-1 rounded border-slate-300 text-primary focus:ring-primary">
+            <label for="save-info" class="text-xs text-slate-500 cursor-pointer select-none">Save my name, email, and website in this browser for the next time I comment.</label>
+          </div>
+
+          <button type="submit" class="px-8 py-3 bg-primary hover:bg-primaryHover active:scale-95 text-secondary font-bold rounded-full text-sm transition-all duration-300">
+            Submit Now
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer Component (Dynamic Loader) -->
+  <div id="footer"></div>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-8 right-8 z-40 w-12 h-12 rounded-full bg-primary hover:bg-primaryHover text-secondary flex items-center justify-center shadow-lg transition-transform duration-300 scale-0">
+    <i class="fa-solid fa-chevron-up text-lg"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script>
+    // Product Catalog Database
+    const productsDb = {
+      // Standard Products
+      "lowbed-semi-trailer-yellow": {
+        title: "Lowbed Semi Trailer (Yellow)",
+        image: "images/products/100090077_267999437721408_2988943934006231040_o.jpg",
+        category: "Products",
+        description: "Built for heavy industrial machinery hauling and oversized logistics. Our yellow lowbed semi-trailer features reinforced steel structure, heavy duty mechanical ramps, high-capacity dual-axles, and safety lights for day & night operations. Coated with top-tier anti-corrosion paint to withstand harsh outdoor operations.",
+        features: ["Premium high-tensile steel frame structure", "Multi-axle setup with heavy load rating", "Hydraulic / manual heavy duty loading ramps", "Reinforced lashing points for secure strapping", "Full compliance with regional safety transport standards"]
+      },
+      "lowbed-semi-trailer-blue": {
+        title: "Lowbed Semi Trailer",
+        image: "images/products/100771825_267999361054749_7313798073468059648_o.jpg",
+        category: "Products",
+        description: "Engineered to perfection, the blue Lowbed Semi Trailer is designed for heavy hauling of construction gear, excavators, and industrial assets. It features a low deck height to lower the center of gravity, facilitating smooth and stable high-capacity payload transport over long distances.",
+        features: ["Optimized low-deck height for cargo clearance", "Durable heavy duty suspension system", "Heavy duty tires and safety brake configuration", "Lashing rings along both sides of the trailer deck", "Complete wiring with LED warning and indicator lamps"]
+      },
+      "bulkers-tanker": {
+        title: "Bulkers (Tanker)",
+        image: "images/products/98348185_267999367721415_3299011409949491200_o.jpg",
+        category: "Products",
+        description: "High-volume bulk powder tanker suitable for conveying cement, flour, dry chemicals, and other pulverized goods. Incorporates a state-of-the-art pneumatic discharge system ensuring clean, fast, and residual-free unloading operations.",
+        features: ["High-grade lightweight carbon steel shell", "Aerated fluidized discharge cone systems", "Manholes with pressure relief and safety valves", "Premium quality running gear and pneumatic brakes", "Optimum center of gravity for maximum highway safety"]
+      },
+      "cargo-bodies-box-truck": {
+        title: "Cargo Bodies (Box Truck)",
+        image: "images/products/103333252_284812619373423_243043752155131057_n.jpg",
+        category: "Products",
+        description: "Rigid commercial cargo bodies tailored for secure dry freight transportation, local distribution, and parcel delivery services. Built with high-strength lightweight aluminum panels and a reinforced subframe.",
+        features: ["Leak-proof aluminum side panels and roof sheet", "Heavy duty hardwood or checkered steel floor plates", "Durable rear roll-up shutter or swing doors", "Interior LED cargo strip lights", "Robust side guards and rear bumper protection"]
+      },
+      "recovery-trucks": {
+        title: "Recovery Trucks",
+        image: "images/products/103424940_284812349373450_7634032767353645575_n.jpg",
+        category: "Products",
+        description: "Professional recovery and vehicle towing systems mounted on commercial chassis. Includes slidebed mechanisms, powerful hydraulic winches, and wheel lift equipment for damage-free vehicle recovery.",
+        features: ["High-strength steel tilting slide deck", "Heavy duty hydraulic winches with wire ropes", "Wireless remote control operation system", "Equipped with flashing emergency warning light bar", "Toolbox compartments with locks"]
+      },
+      "flatbed-semi-trailer": {
+        title: "Flatbed Semi Trailer",
+        image: "images/products/FLATBED SEMI TRAILER.jpeg",
+        category: "Products",
+        description: "Universal flatbed trailer designed for transporting general cargo, containers, pipes, steel structures, and bulk materials. Offers a highly adaptable open deck platform for easy loading and unloading from all sides.",
+        features: ["Robust main beam crafted from high-tensile steel", "Equipped with container twist locks", "Heavy duty landing gear and kingpin", "Multi-leaf spring suspension system", "Safety side boards and reflective markings"]
+      },
+      "heavy-tipper-trailer": {
+        title: "Heavy Tipper Trailer",
+        image: "images/products/Tip-02.JPG",
+        category: "Products",
+        description: "High-volume heavy tipper trailer built for transporting aggregate, rock, sand, and mining materials. Fitted with heavy-duty multi-stage telescopic cylinders for high tipping angles and secure unloading operations.",
+        features: ["Abrasion-resistant steel body plates", "Heavy duty front tipping telescopic cylinders", "Automatic mechanical tailgate locking system", "Robust multi-axle running gear with high clearance", "Safety props for stable tipping operation"]
+      },
+      "vacuum-tanker": {
+        title: "Vacuum Tanker",
+        image: "images/products/vaccum.JPG",
+        category: "Products",
+        description: "Specialized vacuum tanker designed for liquid waste handling, sewage management, and septic cleaning services. Equipped with high-output vacuum pumps and heavy duty pressure-tested containment tanks.",
+        features: ["Reinforced tank structure with internal baffles", "High-capacity vacuum pump with oil separator", "Primary and secondary shut-off safety valves", "Suction and discharge hose tray carriers", "Full opening rear hydraulic dish door option"]
+      },
+      "lowbed-heavy-trailer": {
+        title: "Lowbed Heavy Trailer",
+        image: "images/products/lower-bed-01.jpg",
+        category: "Products",
+        description: "Extreme capacity lowbed trailer engineered to transport heavy equipment like bulldozers, pile drivers, and massive generator blocks. Combines maximum mechanical loading capacity with lower deck heights.",
+        features: ["Reinforced gooseneck and wheel cover ramp design", "Heavy duty axles with mechanical suspension", "Wide deck extensions with pull-out brackets", "Heavy lashing D-rings along the frame", "Durable wood and steel composite deck floor"]
+      },
+      "high-capacity-tipper": {
+        title: "High-Capacity Tipper",
+        image: "images/products/Tip-03.JPG",
+        category: "Products",
+        description: "Large volume tipper body engineered for mining, bulk earthmoving, and heavy construction logistics. Delivers excellent tipping speed and reliable chassis stability under full capacity cargo load.",
+        features: ["Premium quality high-wear resistant steel plates", "Telescopic front-end tipping cylinder", "Reinforced tailgate with dual locking pins", "Cab guard shield for driver protection", "Mudguards and rear safety bumper"]
+      },
+      "cement-bulker-carrier": {
+        title: "Cement Bulker Carrier",
+        image: "images/products/image00006.jpeg",
+        category: "Products",
+        description: "Specialized trailer designed for safe highway transportation of dry bulk cement. High quality components ensure optimal fluidization and high rate of bulk discharge.",
+        features: ["Robust dual-compartment vessel construction", "High volume discharge pipe arrangement", "Top walk platform with safety fold-up handrails", "Integrated pressure gauge and safety exhaust valve", "Reliable dual-axle suspension system"]
+      },
+      "container-carrier-trailer": {
+        title: "Container Carrier Trailer",
+        image: "images/products/1616481020725.jpg",
+        category: "Products",
+        description: "Sleek and strong container skeleton trailer designed to transport standard ISO 20ft and 40ft containers. Highly durable locks keep cargo firmly connected during long hauls.",
+        features: ["Specially engineered skeletal main frame", "Heavy duty container twist locks", "Dual/triple axle configurations with disc/drum brakes", "Integrated safety landing legs", "LED tail lights and marker plates"]
+      },
+
+      // Special Products
+      "cement-batch-mixers": {
+        title: "Cement Batch Mixers",
+        image: "images/special-products/cement-batchmixers.jpg",
+        category: "Special Products",
+        description: "Custom heavy-duty concrete transit mixer units designed to mix and transport large volumes of concrete. Fabricated with high-grade wear-resistant steel for the mixing drum and spiral blades to prolong unit lifespan.",
+        features: ["High wear-resistance steel mixing drum", "Premium hydraulic pump and motor systems", "Integrated water tank with pressurized spray hose", "Adjustable concrete discharge chute mechanism", "Double spiral mixing blades inside drum"]
+      },
+      "car-carrier-trailer": {
+        title: "Car Carrier Trailer",
+        image: "images/special-products/car-carrier.jpg",
+        category: "Special Products",
+        description: "Double-deck vehicle transport trailer engineered for efficient shipping of multiple cars. Equipped with hydraulic lifting decks, adjustable ramps, and soft secure wheel straps.",
+        features: ["Two-tier car loading structure design", "Hydraulically operated upper deck lifting system", "Adjustable manual car-loading wheel stops", "Slip-resistant mesh surface plate decks", "Full length safety side guards"]
+      },
+      "hardox-semi-round-tipper": {
+        title: "Hardox Semi Round Tipper",
+        image: "images/special-products/hardox-semi-round-tip.jpg",
+        category: "Special Products",
+        description: "Advanced semi-round tipper body crafted using genuine Hardox steel plates. The semi-round design prevents wet materials from sticking in corners during tipping, reducing cycle time.",
+        features: ["Genuine Hardox abrasion-resistant body plate", "Semi-round bucket design to prevent sticky cargo", "Enhanced structural integrity with reduced tare weight", "Premium hydraulic cylinder system", "Heavy duty tail gate lock mechanics"]
+      },
+      "rock-body-tipper": {
+        title: "Rock Body Tipper",
+        image: "images/special-products/rock-body-tipper.jpg",
+        category: "Special Products",
+        description: "Reinforced rock tipper body designed for heavy rock blasting sites and stone quarry logistics. The reinforced rib structure absorbs major heavy impacts.",
+        features: ["Reinforced steel outer skeleton ribs", "Extra thick wear plates for floor and sides", "High tipping angle for clean rock discharge", "Protective cabin visor overhead plate", "Double-locking heavy gate system"]
+      },
+      "fuel-tanker-sleek-model": {
+        title: "Fuel Tanker (Sleek Model)",
+        image: "images/special-products/Fuel-Tanker-02.jpg",
+        category: "Special Products",
+        description: "Custom designed sleek fuel tanker body for safe liquid fuel distribution. Divided into compartments with separate outlet lines for transporting different fuel grades.",
+        features: ["Internal baffles for liquid sloshing reduction", "Durable fuel discharge hose trays", "Sleek low wind resistance shell design", "Pneumatic bottom emergency valves", "Certified fuel discharge metering system"]
+      },
+      "heavy-cement-bulker": {
+        title: "Heavy Cement Bulker",
+        image: "images/special-products/Bulkers.jpg",
+        category: "Special Products",
+        description: "Extra capacity dry powder bulker built to handle heavy cement payloads for long-distance projects across the region. Built for high performance and low maintenance.",
+        features: ["Reinforced vessel shell for high pressure safety", "High capacity air compressor system compatibility", "Multi-cone fluidization discharge systems", "Robust suspension designed for off-road tracks", "Dual side discharge pipeline valves"]
+      },
+      "high-capacity-fuel-tanker": {
+        title: "High-Capacity Fuel Tanker",
+        image: "images/special-products/Fuel-Tanker-03.jpg",
+        category: "Special Products",
+        description: "Large volume liquid fuel transport tanker with advanced safety instrumentation, vapor recovery systems, and safety override panels.",
+        features: ["Multi-compartment tanker layout", "Vapor recovery line fittings", "Overfill prevention sensor system", "Pneumatic safety shutoff valves", "Tough mechanical suspension setup"]
+      },
+      "bulk-cement-silo-tanker": {
+        title: "Bulk Cement Silo Tanker",
+        image: "images/special-products/Bulker-01.jpg",
+        category: "Special Products",
+        description: "Silo-type dry bulk bulker designed for fast connection to construction storage silos, optimizing bulk powder transfer cycles.",
+        features: ["Large diameter pressure manhole hatches", "Premium fluidizing canvas fabrics", "Quick coupling discharge connections", "Double safety pressure release lines", "Integrated tool compartment box"]
+      },
+      "specialized-water-tanker": {
+        title: "Specialized Water Tanker",
+        image: "images/special-products/WhatsApp Image 2020-05-06 at 5.32.16 PM.jpeg",
+        category: "Special Products",
+        description: "Premium steel water tanker body with inner anti-corrosion coating, spray bar connections, and high capacity water pump for site support.",
+        features: ["Inner food-grade epoxy tank coating", "Rear pressurized water spray bars", "High volume suction and discharge water pump", "Sturdy side hose rack tubes", "Heavy duty ladder and walk platform"]
+      },
+      "heavy-duty-tipper-transport": {
+        title: "Heavy Duty Tipper Transport",
+        image: "images/special-products/WhatsApp Image 2020-03-31 at 1.44.01 PM.jpeg",
+        category: "Special Products",
+        description: "Heavy duty transport tipper body designed for large scale earthworks, mining projects, and general cargo support.",
+        features: ["Extra thick bottom floor wear steel", "Robust top hinge tailgate arrangement", "Multi-stage tipping cylinder mechanism", "Fully welded heavy side support columns", "Complete rear lighting protection grills"]
+      },
+      "dual-axle-bulk-tanker": {
+        title: "Dual-Axle Bulk Tanker",
+        image: "images/special-products/WhatsApp Image 2020-03-31 at 1.44.00 PM.jpeg",
+        category: "Special Products",
+        description: "Medium-capacity dry bulk carrier with dual axles for urban deliveries, city construction sites, and confined space access.",
+        features: ["Dual axle setup for improved maneuverability", "Fast discharge air line layout", "Highly durable steel frame structure", "Compact overall vehicle length design", "Complete brake safety systems"]
+      },
+      "multi-purpose-cargo-body": {
+        title: "Multi-purpose Cargo Body",
+        image: "images/special-products/WhatsApp Image 2020-03-31 at 1.43.59 PM.jpeg",
+        category: "Special Products",
+        description: "Custom truck cargo body designed for general commercial transport, featuring removable side drops and rear door options.",
+        features: ["Removable heavy duty steel side boards", "Durable front headboard bulkhead protector", "Checkered non-slip steel floor plates", "Multiple integrated side tie-down hooks", "Durable underbody toolboxes with locks"]
+      }
+    };
+
+    // Component Loader Function
+    async function loadComponent(id, file) {
+      try {
+        const response = await fetch(file);
+        if (!response.ok) throw new Error('Network response was not ok');
+        const text = await response.text();
+        document.getElementById(id).innerHTML = text;
+      } catch (error) {
+        console.error(`Error loading component ${file}:`, error);
+      }
+    }
+
+    // Scroll-to-top show/hide logic
+    window.addEventListener('scroll', () => {
+      const btn = document.getElementById('scrollToTop');
+      if (window.scrollY > 300) {
+        btn.classList.remove('scale-0');
+        btn.classList.add('scale-100');
+      } else {
+        btn.classList.remove('scale-100');
+        btn.classList.add('scale-0');
+      }
+    });
+
+    // Render Product Details
+    function renderProduct() {
+      const params = new URLSearchParams(window.location.search);
+      const productId = params.get('id') || "lowbed-semi-trailer-blue"; // default fallback
+      const product = productsDb[productId];
+
+      if (product) {
+        // Update browser tab title & header texts
+        document.title = `${product.title} - Amer Amma`;
+        document.getElementById('banner-title').textContent = product.title;
+        document.getElementById('banner-title').classList.remove('uppercase');
+        document.getElementById('banner-subtitle').textContent = `Category: ${product.category}`;
+        
+        // Update breadcrumb
+        const parentLink = document.getElementById('breadcrumb-parent-link');
+        if (product.category === "Special Products") {
+          parentLink.href = "special-products.html";
+          parentLink.textContent = "Special Products";
+        } else {
+          parentLink.href = "products.html";
+          parentLink.textContent = "Products";
+        }
+        document.getElementById('breadcrumb-child-title').textContent = product.title;
+
+        // Populate elements
+        document.getElementById('product-image').src = product.image;
+        document.getElementById('product-image').alt = product.title;
+        document.getElementById('product-category').textContent = product.category;
+        document.getElementById('product-description').textContent = product.description;
+
+        // Populate list features
+        const featuresList = document.getElementById('product-features');
+        featuresList.innerHTML = product.features.map(feat => `
+          <li>${feat}</li>
+        `).join('');
+
+        // Find sibling keys for Prev / Next links
+        const keys = Object.keys(productsDb);
+        const index = keys.indexOf(productId);
+        
+        const prevKey = index > 0 ? keys[index - 1] : keys[keys.length - 1];
+        const nextKey = index < keys.length - 1 ? keys[index + 1] : keys[0];
+
+        document.getElementById('prev-product-link').href = `product-detail.html?id=${prevKey}`;
+        document.getElementById('next-product-link').href = `product-detail.html?id=${nextKey}`;
+      } else {
+        // Redirection fallback
+        window.location.href = "products.html";
+      }
+    }
+
+    // Initialize Page
+    async function init() {
+      await loadComponent('header', 'components/header.html');
+      await loadComponent('footer', 'components/footer.html');
+      
+      // Highlight nav item matching the category
+      setTimeout(() => {
+        const params = new URLSearchParams(window.location.search);
+        const productId = params.get('id');
+        const product = productsDb[productId];
+        const activeNavName = (product && product.category === "Special Products") ? "Special Products" : "Products";
+        
+        const navLinks = document.querySelectorAll('header nav a');
+        navLinks.forEach(link => {
+          if (link.textContent.trim() === activeNavName) {
+            link.classList.remove('text-slate-300');
+            link.classList.add('text-primary');
+          } else if (link.textContent.trim() === 'Home') {
+            link.classList.remove('text-primary');
+            link.classList.add('text-slate-300');
+          }
+        });
+      }, 500);
+
+      renderProduct();
+    }
+
+    window.addEventListener('popstate', renderProduct);
+
+    init();
+  </script>
+</body>
+</html>

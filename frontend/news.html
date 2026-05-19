@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News - Amer Amma</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FBBF24',
+            primaryHover: '#F59E0B',
+            secondary: '#0F172A',
+            footer: '#020617',
+            accent: '#EF4444',
+            accentHover: '#DC2626',
+            surface: '#F8FAFC',
+          },
+          boxShadow: {
+            'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',
+            'glow': '0 0 20px rgba(251, 191, 36, 0.3)',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-surface text-slate-800 flex flex-col min-h-screen">
+  
+  <!-- Header Component (Dynamic Loader) -->
+  <div id="header"></div>
+
+  <!-- Page Header / Breadcrumb Banner -->
+  <section class="relative pt-20">
+    <div class="h-[180px] md:h-[220px] relative w-full overflow-hidden flex items-center bg-secondary">
+      <!-- Dark Overlay / Gradient -->
+      <div class="absolute inset-0 bg-gradient-to-r from-[#020617] via-[#020617]/90 to-transparent"></div>
+      
+      <!-- Content Container (Dynamic Title) -->
+      <div class="relative z-10 container mx-auto px-6 max-w-7xl flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div>
+          <h1 id="banner-title" class="text-3xl md:text-4xl font-extrabold text-white uppercase tracking-wide">
+            News
+          </h1>
+          <p id="banner-subtitle" class="text-primary text-xs font-semibold uppercase tracking-wider mt-1">
+            Stay updated with our latest announcements and reports
+          </p>
+        </div>
+        
+        <!-- Breadcrumbs inside banner -->
+        <div id="breadcrumbs" class="text-sm text-slate-300 font-medium bg-white/5 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10 w-max flex items-center gap-2">
+          <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+          <span class="text-slate-500">></span>
+          <span class="text-primary font-semibold">News</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dynamic Content Container -->
+  <main id="main-content" class="flex-grow py-16 bg-white">
+    <!-- Rendered dynamically by JavaScript -->
+  </main>
+
+  <!-- Footer Component (Dynamic Loader) -->
+  <div id="footer"></div>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-8 right-8 z-40 w-12 h-12 rounded-full bg-primary hover:bg-primaryHover text-secondary flex items-center justify-center shadow-lg transition-transform duration-300 scale-0">
+    <i class="fa-solid fa-chevron-up text-lg"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script>
+    // Mock Data for News Articles
+    const newsArticles = {
+      "tipper-company-of-the-year-2019": {
+        id: "tipper-company-of-the-year-2019",
+        title: "Tipper Company of the year 2019",
+        date: "October 12, 2023",
+        category: "News",
+        commentsCount: 0,
+        author: "Admin",
+        image: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        excerpt: "Awarded the prestigious title for outstanding manufacturing quality and innovative body building solutions in the commercial sector.",
+        content: `We are thrilled to announce that Amer Amma has been recognized as the Tipper Company of the Year 2019. This prestigious accolade stands as a testament to our engineering excellence, state-of-the-art manufacturing facilities, and our team's unwavering commitment to safety and quality. 
+        <br><br>
+        Over the past year, we have introduced several key innovations in lightweight body construction, optimizing payload efficiency for our transport partners across the Middle East. Our custom-designed tippers, made with premium high-tensile steel, have set a new benchmark for durability under extreme conditions. We thank our clients, partners, and our hard-working engineers for making this success possible.`,
+        next: "final-quarter-2019-revenue-report-released",
+        prev: null
+      },
+      "final-quarter-2019-revenue-report-released": {
+        id: "final-quarter-2019-revenue-report-released",
+        title: "Final Quarter 2019 revenue report released",
+        date: "October 12, 2023",
+        category: "News",
+        commentsCount: 1,
+        author: "Admin",
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        excerpt: "A comprehensive overview of our financial performance highlighting continuous growth and market expansion.",
+        content: `Amer Amma has officially released its financial report for the final quarter of 2019. The report reveals a robust double-digit growth in sales revenue, driven primarily by a surge in demand for custom trailer manufacturing and heavy fabrication contracts. 
+        <br><br>
+        Our strategic expansion in Hamriyah Free Zone Phase 2 has allowed us to increase production capacity by 35%, successfully meeting the rising needs of regional logistics operators. Additionally, investment in advanced automation and robotic welding equipment has significantly reduced assembly time while improving safety margins. With a strong pipeline of orders for the upcoming fiscal year, Amer Amma remains well-positioned to maintain its leadership in premium vehicle body building.`,
+        next: null,
+        prev: "tipper-company-of-the-year-2019"
+      }
+    };
+
+    // Component Loader Function
+    async function loadComponent(id, file) {
+      try {
+        const response = await fetch(file);
+        if (!response.ok) throw new Error('Network response was not ok');
+        const text = await response.text();
+        document.getElementById(id).innerHTML = text;
+      } catch (error) {
+        console.error(`Error loading component ${file}:`, error);
+      }
+    }
+
+    // Scroll-to-top show/hide logic
+    window.addEventListener('scroll', () => {
+      const btn = document.getElementById('scrollToTop');
+      if (window.scrollY > 300) {
+        btn.classList.remove('scale-0');
+        btn.classList.add('scale-100');
+      } else {
+        btn.classList.remove('scale-100');
+        btn.classList.add('scale-0');
+      }
+    });
+
+    // Render Function
+    function render() {
+      const params = new URLSearchParams(window.location.search);
+      const articleId = params.get('id');
+      const categoryParam = params.get('category');
+      
+      const bannerTitle = document.getElementById('banner-title');
+      const bannerSubtitle = document.getElementById('banner-subtitle');
+      const breadcrumbs = document.getElementById('breadcrumbs');
+      const mainContent = document.getElementById('main-content');
+
+      if (articleId && newsArticles[articleId]) {
+        // RENDER ARTICLE DETAIL VIEW
+        const article = newsArticles[articleId];
+        
+        // Update Title & Header Banner
+        document.title = `${article.title} - Amer Amma`;
+        bannerTitle.textContent = article.title;
+        bannerTitle.classList.remove('uppercase'); // Preserve case for details
+        bannerSubtitle.textContent = `Posted on ${article.date} in ${article.category}`;
+        
+        breadcrumbs.innerHTML = `
+          <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+          <span class="text-slate-500">></span>
+          <a href="news.html" class="hover:text-primary transition-colors">News</a>
+          <span class="text-slate-500">></span>
+          <span class="text-primary font-semibold line-clamp-1">${article.title}</span>
+        `;
+
+        // Render HTML for detail view
+        mainContent.innerHTML = `
+          <div class="container mx-auto px-6 max-w-4xl">
+            <!-- Article Image -->
+            <div class="rounded-3xl overflow-hidden shadow-soft mb-8 bg-slate-100 max-h-[500px]">
+              <img src="${article.image}" alt="${article.title}" class="w-full h-full object-cover">
+            </div>
+
+            <!-- Meta Data Row -->
+            <div class="flex flex-wrap items-center gap-6 text-slate-500 text-sm mb-6 border-b border-slate-100 pb-6">
+              <span class="flex items-center gap-2">
+                <i class="fa-regular fa-clock text-primary"></i> ${article.date}
+              </span>
+              <span class="flex items-center gap-2">
+                <i class="fa-solid fa-tag text-primary"></i> ${article.category}
+              </span>
+              <span class="flex items-center gap-2">
+                <i class="fa-regular fa-comment text-primary"></i> ${article.commentsCount} ${article.commentsCount === 1 ? 'Comment' : 'Comments'}
+              </span>
+            </div>
+
+            <!-- Main Content Body -->
+            <article class="prose prose-slate max-w-none text-slate-600 text-base leading-relaxed mb-12">
+              <p>${article.content}</p>
+            </article>
+
+            <!-- Social Share Bar & Pagination -->
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-6 border-y border-slate-100 py-6 mb-12">
+              <!-- Share Social Media Icons -->
+              <div class="flex items-center gap-3">
+                <span class="text-sm font-semibold text-slate-400 uppercase mr-2">Share:</span>
+                <a href="#" class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:bg-[#3b5998] hover:text-white transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:bg-[#1da1f2] hover:text-white transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:bg-[#db4437] hover:text-white transition-colors"><i class="fa-brands fa-google-plus-g"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:bg-[#0077b5] hover:text-white transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+              </div>
+
+              <!-- Pagination Navigation -->
+              <div class="flex items-center gap-4">
+                ${article.prev ? `
+                  <a href="news.html?id=${article.prev}" class="text-sm font-bold text-slate-500 hover:text-primary transition-colors flex items-center gap-1">
+                    <i class="fa-solid fa-chevron-left text-xs"></i> Prev
+                  </a>
+                ` : ''}
+                ${article.next ? `
+                  <a href="news.html?id=${article.next}" class="text-sm font-bold text-slate-500 hover:text-primary transition-colors flex items-center gap-1">
+                    Next <i class="fa-solid fa-chevron-right text-xs"></i>
+                  </a>
+                ` : ''}
+              </div>
+            </div>
+
+            <!-- Leave A Reply Section -->
+            <div class="bg-slate-50 rounded-3xl p-8 border border-slate-100">
+              <h3 class="text-2xl font-bold text-secondary mb-2">Leave A Reply</h3>
+              <p class="text-slate-400 text-xs mb-8">Your email address will not be published.</p>
+
+              <form onsubmit="event.preventDefault(); alert('Comment submitted for moderation!'); event.target.reset();" class="space-y-6">
+                <div>
+                  <textarea required rows="6" placeholder="Enter Your Comment*" class="w-full px-4 py-3 border border-slate-300 rounded-2xl bg-white focus:outline-none focus:ring-2 focus:ring-primary/45 focus:border-primary transition-all duration-300 text-sm placeholder:text-slate-400"></textarea>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <input type="text" required placeholder="Your Name*" class="w-full px-4 py-3 border border-slate-300 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-primary/45 focus:border-primary transition-all duration-300 text-sm placeholder:text-slate-400">
+                  <input type="email" required placeholder="Email Address*" class="w-full px-4 py-3 border border-slate-300 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-primary/45 focus:border-primary transition-all duration-300 text-sm placeholder:text-slate-400">
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <input type="url" placeholder="Website" class="w-full px-4 py-3 border border-slate-300 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-primary/45 focus:border-primary transition-all duration-300 text-sm placeholder:text-slate-400">
+                  <input type="tel" placeholder="Phone Num" class="w-full px-4 py-3 border border-slate-300 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-primary/45 focus:border-primary transition-all duration-300 text-sm placeholder:text-slate-400">
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <input type="checkbox" id="save-info" class="mt-1 rounded border-slate-300 text-primary focus:ring-primary">
+                  <label for="save-info" class="text-xs text-slate-500 cursor-pointer select-none">Save my name, email, and website in this browser for the next time I comment.</label>
+                </div>
+
+                <button type="submit" class="px-8 py-3 bg-primary hover:bg-primaryHover active:scale-95 text-secondary font-bold rounded-full text-sm transition-all duration-300">
+                  Submit Now
+                </button>
+              </form>
+            </div>
+          </div>
+        `;
+      } else {
+        // RENDER LISTING VIEW (News Archive / Categories view)
+        document.title = `News Category - Amer Amma`;
+        bannerTitle.textContent = categoryParam ? `Category: ${categoryParam}` : "Company News";
+        bannerTitle.classList.add('uppercase');
+        bannerSubtitle.textContent = "Explore our archives, reports, and industry awards";
+        
+        breadcrumbs.innerHTML = `
+          <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+          <span class="text-slate-500">></span>
+          <span class="text-primary font-semibold">${categoryParam ? categoryParam : 'News'}</span>
+        `;
+
+        // Render articles in grid list
+        const cardsHtml = Object.values(newsArticles).map(article => `
+          <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 hover:shadow-soft hover:-translate-y-1.5 transition-all duration-300 group flex flex-col h-full">
+            <!-- Thumbnail Image -->
+            <div class="h-60 overflow-hidden relative bg-slate-100 flex-shrink-0">
+              <a href="news.html?id=${article.id}">
+                <!-- Hover Link overlay -->
+                <div class="absolute inset-0 bg-secondary/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-center justify-center">
+                  <div class="w-12 h-12 rounded-full bg-primary text-secondary flex items-center justify-center shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                    <i class="fa-solid fa-link text-lg"></i>
+                  </div>
+                </div>
+                <img src="${article.image}" alt="${article.title}" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" loading="lazy">
+              </a>
+            </div>
+            
+            <!-- Details Container -->
+            <div class="p-8 flex-grow flex flex-col justify-between">
+              <div>
+                <!-- Metadata Row -->
+                <div class="flex items-center gap-4 text-xs font-semibold text-slate-400 uppercase mb-3">
+                  <span class="flex items-center gap-1.5"><i class="fa-regular fa-clock text-primary text-sm"></i> ${article.date}</span>
+                  <span class="flex items-center gap-1.5"><i class="fa-solid fa-tag text-primary"></i> ${article.category}</span>
+                  <span class="flex items-center gap-1.5"><i class="fa-regular fa-comment text-primary"></i> ${article.commentsCount} Comment</span>
+                </div>
+                
+                <h3 class="font-bold text-xl text-secondary mb-4 group-hover:text-primary transition-colors">
+                  <a href="news.html?id=${article.id}">${article.title}</a>
+                </h3>
+                <p class="text-slate-500 text-sm leading-relaxed mb-6">${article.excerpt}</p>
+              </div>
+
+              <!-- Author / Read More Footer -->
+              <div class="flex items-center justify-between border-t border-slate-100 pt-6 mt-auto">
+                <div class="flex items-center gap-3">
+                  <div class="w-9 h-9 rounded-full bg-slate-100 flex items-center justify-center text-slate-400">
+                    <i class="fa-solid fa-user"></i>
+                  </div>
+                  <span class="text-sm font-bold text-secondary">${article.author}</span>
+                </div>
+                <a href="news.html?id=${article.id}" class="text-sm font-bold text-primary hover:text-primaryHover transition-colors flex items-center gap-1">
+                  Read More <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        `).join('');
+
+        mainContent.innerHTML = `
+          <div class="container mx-auto px-6 max-w-7xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              ${cardsHtml}
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    // Initialize Page Content & Components
+    async function init() {
+      await loadComponent('header', 'components/header.html');
+      await loadComponent('footer', 'components/footer.html');
+      
+      // Update active nav state for News (if navigation has a news item)
+      setTimeout(() => {
+        const navLinks = document.querySelectorAll('header nav a');
+        navLinks.forEach(link => {
+          if (link.textContent.trim() === 'News') {
+            link.classList.remove('text-slate-300');
+            link.classList.add('text-primary');
+          } else if (link.textContent.trim() === 'Home') {
+            link.classList.remove('text-primary');
+            link.classList.add('text-slate-300');
+          }
+        });
+      }, 500);
+
+      render();
+    }
+
+    // Monitor popstate for navigation within the same page
+    window.addEventListener('popstate', render);
+
+    init();
+  </script>
+</body>
+</html>

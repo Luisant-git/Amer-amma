@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Products - Amer Amma</title>
+  <title>Special Products - Amer Amma</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -65,8 +65,8 @@
   <!-- Page Header / Breadcrumb Banner -->
   <section class="relative pt-20">
     <div class="h-[180px] md:h-[220px] relative w-full overflow-hidden flex items-center bg-secondary">
-      <!-- Background Image (Products Grid) -->
-      <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Products Hero" class="absolute inset-0 w-full h-full object-cover opacity-45">
+      <!-- Background Image (Special Products) -->
+      <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Special Products Hero" class="absolute inset-0 w-full h-full object-cover opacity-45">
       <!-- Dark Overlay / Gradient -->
       <div class="absolute inset-0 bg-gradient-to-r from-[#020617] via-[#020617]/80 to-transparent"></div>
       
@@ -74,10 +74,10 @@
       <div class="relative z-10 container mx-auto px-6 max-w-7xl flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div>
           <h1 class="text-3xl md:text-4xl font-extrabold text-white uppercase tracking-wide">
-            Products
+            Special Products
           </h1>
           <p class="text-primary text-xs font-semibold uppercase tracking-wider mt-1">
-            Explore our premium range of commercial vehicles and bodies
+            Custom Engineering & Specialized Transport Vehicles
           </p>
         </div>
         
@@ -85,22 +85,22 @@
         <div class="text-sm text-slate-300 font-medium bg-white/5 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10 w-max flex items-center gap-2">
           <a href="index.html" class="hover:text-primary transition-colors">Home</a>
           <span class="text-slate-500">></span>
-          <span class="text-primary font-semibold">Products</span>
+          <span class="text-primary font-semibold">Special Products</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Products Main Content -->
+  <!-- Special Products Main Content -->
   <section class="pt-12 pb-10 bg-white">
     <div class="container mx-auto px-6 max-w-7xl">
       <div class="mb-8">
-        <h2 class="text-3xl md:text-4xl font-extrabold text-secondary tracking-tight">Products</h2>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-secondary tracking-tight">Special Products</h2>
         <div class="w-12 h-1 bg-primary mt-3 rounded-full"></div>
       </div>
       
-      <!-- Product Grid -->
-      <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Special Product Grid -->
+      <div id="special-products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Dynamic content loaded via JS -->
       </div>
     </div>
@@ -114,67 +114,67 @@
 
   <!-- Dynamic Component Loader -->
   <script>
-    // Product Catalog Data Array (100% dynamic loading)
-    const productsData = [
+    // Special Product Catalog Data Array (100% dynamic loading)
+    const specialProductsData = [
       {
-        title: "Lowbed Semi Trailer (Yellow)",
-        image: "images/products/100090077_267999437721408_2988943934006231040_o.jpg",
-        url: "product-detail.html?id=lowbed-semi-trailer-yellow"
+        title: "Cement Batch Mixers",
+        image: "images/special-products/cement-batchmixers.jpg",
+        url: "product-detail.html?id=cement-batch-mixers"
       },
       {
-        title: "Lowbed Semi Trailer (Blue)",
-        image: "images/products/100771825_267999361054749_7313798073468059648_o.jpg",
-        url: "product-detail.html?id=lowbed-semi-trailer-blue"
+        title: "Car Carrier Trailer",
+        image: "images/special-products/car-carrier.jpg",
+        url: "product-detail.html?id=car-carrier-trailer"
       },
       {
-        title: "Bulkers (Tanker)",
-        image: "images/products/98348185_267999367721415_3299011409949491200_o.jpg",
-        url: "product-detail.html?id=bulkers-tanker"
+        title: "Hardox Semi Round Tipper",
+        image: "images/special-products/hardox-semi-round-tip.jpg",
+        url: "product-detail.html?id=hardox-semi-round-tipper"
       },
       {
-        title: "Cargo Bodies (Box Truck)",
-        image: "images/products/103333252_284812619373423_243043752155131057_n.jpg",
-        url: "product-detail.html?id=cargo-bodies-box-truck"
+        title: "Rock Body Tipper",
+        image: "images/special-products/rock-body-tipper.jpg",
+        url: "product-detail.html?id=rock-body-tipper"
       },
       {
-        title: "Recovery Trucks",
-        image: "images/products/103424940_284812349373450_7634032767353645575_n.jpg",
-        url: "product-detail.html?id=recovery-trucks"
+        title: "Fuel Tanker (Sleek Model)",
+        image: "images/special-products/Fuel-Tanker-02.jpg",
+        url: "product-detail.html?id=fuel-tanker-sleek-model"
       },
       {
-        title: "Flatbed Semi Trailer",
-        image: "images/products/FLATBED SEMI TRAILER.jpeg",
-        url: "product-detail.html?id=flatbed-semi-trailer"
+        title: "Heavy Cement Bulker",
+        image: "images/special-products/Bulkers.jpg",
+        url: "product-detail.html?id=heavy-cement-bulker"
       },
       {
-        title: "Heavy Tipper Trailer",
-        image: "images/products/Tip-02.JPG",
-        url: "product-detail.html?id=heavy-tipper-trailer"
+        title: "High-Capacity Fuel Tanker",
+        image: "images/special-products/Fuel-Tanker-03.jpg",
+        url: "product-detail.html?id=high-capacity-fuel-tanker"
       },
       {
-        title: "Vacuum Tanker",
-        image: "images/products/vaccum.JPG",
-        url: "product-detail.html?id=vacuum-tanker"
+        title: "Bulk Cement Silo Tanker",
+        image: "images/special-products/Bulker-01.jpg",
+        url: "product-detail.html?id=bulk-cement-silo-tanker"
       },
       {
-        title: "Lowbed Heavy Trailer",
-        image: "images/products/lower-bed-01.jpg",
-        url: "product-detail.html?id=lowbed-heavy-trailer"
+        title: "Specialized Water Tanker",
+        image: "images/special-products/WhatsApp Image 2020-05-06 at 5.32.16 PM.jpeg",
+        url: "product-detail.html?id=specialized-water-tanker"
       },
       {
-        title: "High-Capacity Tipper",
-        image: "images/products/Tip-03.JPG",
-        url: "product-detail.html?id=high-capacity-tipper"
+        title: "Heavy Duty Tipper Transport",
+        image: "images/special-products/WhatsApp Image 2020-03-31 at 1.44.01 PM.jpeg",
+        url: "product-detail.html?id=heavy-duty-tipper-transport"
       },
       {
-        title: "Cement Bulker Carrier",
-        image: "images/products/image00006.jpeg",
-        url: "product-detail.html?id=cement-bulker-carrier"
+        title: "Dual-Axle Bulk Tanker",
+        image: "images/special-products/WhatsApp Image 2020-03-31 at 1.44.00 PM.jpeg",
+        url: "product-detail.html?id=dual-axle-bulk-tanker"
       },
       {
-        title: "Container Carrier Trailer",
-        image: "images/products/1616481020725.jpg",
-        url: "product-detail.html?id=container-carrier-trailer"
+        title: "Multi-purpose Cargo Body",
+        image: "images/special-products/WhatsApp Image 2020-03-31 at 1.43.59 PM.jpeg",
+        url: "product-detail.html?id=multi-purpose-cargo-body"
       }
     ];
 
@@ -195,21 +195,17 @@
       await loadComponent('partners', 'components/partners.html');
       await loadComponent('footer', 'components/footer.html');
       
-      // Render Products dynamically
-      const productsGrid = document.getElementById('products-grid');
-      if (productsGrid) {
-        productsGrid.innerHTML = productsData.map(product => `
-          <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 hover:shadow-soft hover:-translate-y-1.5 transition-all duration-300 group flex flex-col h-full justify-between">
-            <a href="${product.url}" class="block h-64 overflow-hidden relative bg-slate-100 flex-shrink-0">
+      // Render Special Products dynamically
+      const grid = document.getElementById('special-products-grid');
+      if (grid) {
+        grid.innerHTML = specialProductsData.map(product => `
+          <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 hover:shadow-soft hover:-translate-y-1.5 transition-all duration-300 group">
+            <div class="h-64 overflow-hidden relative bg-slate-100">
               <img src="${product.image}" alt="${product.title}" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" loading="lazy">
-            </a>
-            <div class="p-8 flex-grow flex flex-col justify-between">
-              <div>
-                <h3 class="font-bold text-xl text-secondary mb-4 group-hover:text-primary transition-colors">
-                  <a href="${product.url}">${product.title}</a>
-                </h3>
-              </div>
-              <a href="${product.url}" class="inline-flex items-center font-semibold text-primary hover:text-primaryHover transition-colors w-max group/link mt-auto">
+            </div>
+            <div class="p-8">
+              <h3 class="font-bold text-xl text-secondary mb-4 group-hover:text-primary transition-colors">${product.title}</h3>
+              <a href="${product.url}" class="inline-flex items-center font-semibold text-primary hover:text-primaryHover transition-colors w-max group/link">
                 Read More <i class="fa-solid fa-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform"></i>
               </a>
             </div>
@@ -217,11 +213,11 @@
         `).join('');
       }
 
-      // Update active state in nav (optional script logic)
+      // Update active state in nav to highlight "Special Products"
       setTimeout(() => {
         const navLinks = document.querySelectorAll('header nav a');
         navLinks.forEach(link => {
-          if (link.textContent.trim() === 'Products') {
+          if (link.textContent.trim() === 'Special Products') {
             link.classList.remove('text-slate-300');
             link.classList.add('text-primary');
           } else if (link.textContent.trim() === 'Home') {

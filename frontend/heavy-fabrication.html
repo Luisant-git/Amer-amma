@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heavy Fabrication - Amer Amma</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FBBF24',
+            primaryHover: '#F59E0B',
+            secondary: '#0F172A',
+            footer: '#020617',
+            accent: '#EF4444',
+            accentHover: '#DC2626',
+            surface: '#F8FAFC',
+          },
+          boxShadow: {
+            'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',
+            'glow': '0 0 20px rgba(251, 191, 36, 0.3)',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-surface text-slate-800">
+  
+  <!-- Header Component (Dynamic Loader) -->
+  <div id="header"></div>
+
+  <!-- Page Header / Breadcrumb Banner -->
+  <section class="relative pt-20">
+    <div class="h-[180px] md:h-[220px] relative w-full overflow-hidden flex items-center bg-secondary">
+      <!-- Background Image (Welder with Sparks / Safety Hardhat) -->
+      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Heavy Fabrication Hero" class="absolute inset-0 w-full h-full object-cover opacity-45">
+      <!-- Dark Overlay / Gradient -->
+      <div class="absolute inset-0 bg-gradient-to-r from-[#020617] via-[#020617]/80 to-transparent"></div>
+      
+      <!-- Content -->
+      <div class="relative z-10 container mx-auto px-6 max-w-7xl flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div>
+          <h1 class="text-3xl md:text-4xl font-extrabold text-white uppercase tracking-wide">
+            Heavy Fabrication
+          </h1>
+          <p class="text-primary text-xs font-semibold uppercase tracking-wider mt-1">
+            Premium Engineering & Production
+          </p>
+        </div>
+        
+        <!-- Breadcrumbs inside banner -->
+        <div class="text-sm text-slate-300 font-medium bg-white/5 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10 w-max flex items-center gap-2">
+          <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+          <span class="text-slate-500">></span>
+          <span class="text-primary font-semibold">Heavy Fabrication</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content & Sidebar Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-6 max-w-7xl">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+        
+        <!-- Left Sidebar (Col 4) -->
+        <div class="lg:col-span-4 space-y-12">
+          
+          <!-- Archives -->
+          <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 shadow-sm">
+            <h3 class="text-xl font-bold text-secondary mb-6 relative pb-3 border-b border-slate-200">
+              Archives
+            </h3>
+            <ul class="space-y-4">
+              <li>
+                <a href="#" class="flex items-center gap-3 text-slate-600 hover:text-primary transition-colors group">
+                  <i class="fa-regular fa-calendar-days text-slate-400 group-hover:text-primary transition-colors"></i>
+                  <span class="text-sm font-semibold">October 2023</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Categories -->
+          <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 shadow-sm">
+            <h3 class="text-xl font-bold text-secondary mb-6 relative pb-3 border-b border-slate-200">
+              Categories
+            </h3>
+            <ul class="space-y-4">
+              <li>
+                <a href="news.html?category=News" class="flex items-center justify-between text-slate-600 hover:text-primary transition-colors group">
+                  <span class="text-sm font-semibold">News</span>
+                  <i class="fa-solid fa-chevron-right text-xs text-slate-400 group-hover:text-primary transition-colors"></i>
+                </a>
+              </li>
+              <li>
+                <a href="products.html" class="flex items-center justify-between text-slate-600 hover:text-primary transition-colors group">
+                  <span class="text-sm font-semibold">Products</span>
+                  <i class="fa-solid fa-chevron-right text-xs text-slate-400 group-hover:text-primary transition-colors"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Right Content Area (Col 8) -->
+        <div class="lg:col-span-8 space-y-12">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+            
+            <!-- Left Side Texts -->
+            <div class="md:col-span-7 space-y-6">
+              <div>
+                <h2 class="text-3xl font-extrabold text-secondary tracking-tight mb-2">
+                  Mechanical Engineering
+                </h2>
+                <div class="w-12 h-1 bg-primary rounded-full"></div>
+              </div>
+              
+              <p class="text-slate-500 text-sm leading-relaxed">
+                Mechanical engineering is a branch of science that applies physical sciences and life sciences together with applied mathematics and economics to produce, transform, and all transport, properly use chemicals, materials & energy.
+              </p>
+
+              <p class="text-slate-500 text-sm leading-relaxed">
+                Advancements in computer science found applications designing & managing plants, simplifying calculations & drawings that previously had to be done manually. The completion of the Human Genome Project is also seen as a major development.
+              </p>
+            </div>
+
+            <!-- Right Side Image (Robotic welding arm with sparks) -->
+            <div class="md:col-span-5 rounded-3xl overflow-hidden shadow-soft border border-slate-100 h-72">
+              <img src="https://images.unsplash.com/photo-1616401784845-180882ba9ba8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Robotic welding arm" class="w-full h-full object-cover">
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Service We Offering Section -->
+  <section class="py-20 bg-slate-50 border-t border-slate-100">
+    <div class="container mx-auto px-6 max-w-7xl">
+      <div class="max-w-4xl mb-12">
+        <h2 class="text-3xl font-extrabold text-secondary tracking-tight mb-2">
+          Service We Offering
+        </h2>
+        <div class="w-12 h-1 bg-primary rounded-full mb-6"></div>
+        <p class="text-slate-500 text-sm leading-relaxed">
+          Mechanical engineers use these core principles along with tools like computer-aided design, product lifecycle management to design and analyze manufacturing plants, industrial equipment and machinery, heating and cooling systems, transport systems, aircraft, robotics and medical devices.
+        </p>
+      </div>
+
+      <!-- Engineering columns grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+        
+        <!-- Column 1: Design Engineering -->
+        <div class="bg-white p-8 rounded-2xl shadow-soft border border-slate-100 space-y-6">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xl">
+              <i class="fa-solid fa-ruler-combined"></i>
+            </div>
+            <h4 class="text-lg font-bold text-secondary">Design Engineering</h4>
+          </div>
+          <ul class="space-y-3.5">
+            <li class="flex items-center gap-3 text-sm text-slate-500 font-medium">
+              <span class="w-2 h-2 rounded-full border border-primary flex-shrink-0"></span>
+              Component & Subsystem
+            </li>
+            <li class="flex items-center gap-3 text-sm text-slate-500 font-medium">
+              <span class="w-2 h-2 rounded-full border border-primary flex-shrink-0"></span>
+              Value Engineering
+            </li>
+            <li class="flex items-center gap-3 text-sm text-slate-500 font-medium">
+              <span class="w-2 h-2 rounded-full border border-primary flex-shrink-0"></span>
+              Material Compliance
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 2: Product Engineering -->
+        <div class="bg-white p-8 rounded-2xl shadow-soft border border-slate-100 space-y-6">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xl">
+              <i class="fa-solid fa-gears"></i>
+            </div>
+            <h4 class="text-lg font-bold text-secondary">Product Engineering</h4>
+          </div>
+          <ul class="space-y-3.5">
+            <li class="flex items-center gap-3 text-sm text-slate-500 font-medium">
+              <span class="w-2 h-2 rounded-full border border-primary flex-shrink-0"></span>
+              Seating and cockpit
+            </li>
+            <li class="flex items-center gap-3 text-sm text-slate-500 font-medium">
+              <span class="w-2 h-2 rounded-full border border-primary flex-shrink-0"></span>
+              Product Management
+            </li>
+            <li class="flex items-center gap-3 text-sm text-slate-500 font-medium">
+              <span class="w-2 h-2 rounded-full border border-primary flex-shrink-0"></span>
+              Light Weighting
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Advanced Engineering -->
+        <div class="bg-white p-8 rounded-2xl shadow-soft border border-slate-100 space-y-6">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xl">
+              <i class="fa-solid fa-laptop-code"></i>
+            </div>
+            <h4 class="text-lg font-bold text-secondary">Advanced Engineering</h4>
+          </div>
+          <ul class="space-y-3.5">
+            <li class="flex items-center gap-3 text-sm text-slate-500 font-medium">
+              <span class="w-2 h-2 rounded-full border border-primary flex-shrink-0"></span>
+              Component & Subsystem
+            </li>
+            <li class="flex items-center gap-3 text-sm text-slate-500 font-medium">
+              <span class="w-2 h-2 rounded-full border border-primary flex-shrink-0"></span>
+              Value Engineering
+            </li>
+            <li class="flex items-center gap-3 text-sm text-slate-500 font-medium">
+              <span class="w-2 h-2 rounded-full border border-primary flex-shrink-0"></span>
+              Material Compliance
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Precautions / Intelligence / Specializations Tabs -->
+      <div class="mt-20">
+        <!-- Tabs Header -->
+        <div class="flex flex-wrap border-b border-slate-200">
+          <button id="tab-btn-precautions" onclick="switchTab('precautions')" class="px-8 py-4 text-sm font-bold text-slate-800 bg-white border-t border-x border-slate-200 rounded-t-xl -mb-[1px] transition-all duration-300">
+            Precautions
+          </button>
+          <button id="tab-btn-intelligence" onclick="switchTab('intelligence')" class="px-8 py-4 text-sm font-semibold text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-t-xl transition-all duration-300">
+            Intelligence
+          </button>
+          <button id="tab-btn-specializations" onclick="switchTab('specializations')" class="px-8 py-4 text-sm font-semibold text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-t-xl transition-all duration-300">
+            Specializations
+          </button>
+        </div>
+
+        <!-- Tab Content Box -->
+        <div class="bg-white p-8 rounded-b-2xl border-x border-b border-slate-200 shadow-soft min-h-[140px] flex items-center">
+          <p id="tab-content" class="text-slate-500 text-sm leading-relaxed transition-opacity duration-300">
+            Processing and refining operatons turn crude oil and gas into marktable products. In the case of crude oil, these products include heating oil, gasoline for use in vehicles, jet fuel, and diesel oil. Oil refining processes include distillation, vacuum distillation, catalytic reforming, catalytic cracking, alkylation, isomerization and hydrotreating.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer Component (Dynamic Loader) -->
+  <div id="footer"></div>
+
+  <!-- Tab and Dynamic Component Loader Scripts -->
+  <script>
+    const tabContents = {
+      precautions: "Processing and refining operatons turn crude oil and gas into marktable products. In the case of crude oil, these products include heating oil, gasoline for use in vehicles, jet fuel, and diesel oil. Oil refining processes include distillation, vacuum distillation, catalytic reforming, catalytic cracking, alkylation, isomerization and hydrotreating.",
+      intelligence: "Processing and refining operatons turn crude oil and gas into marktable products. In the case of crude oil, these products include heating oil, gasoline for use in vehicles, jet fuel, and diesel oil. Oil refining processes include distillation, vacuum distillation, catalytic reforming, catalytic cracking, alkylation, isomerization and hydrotreating.",
+      specializations: "Processing and refining operatons turn crude oil and gas into marktable products. In the case of crude oil, these products include heating oil, gasoline for use in vehicles, jet fuel, and diesel oil. Oil refining processes include distillation, vacuum distillation, catalytic reforming, catalytic cracking, alkylation, isomerization and hydrotreating."
+    };
+
+    function switchTab(tabId) {
+      // Content transition
+      const contentText = document.getElementById('tab-content');
+      contentText.style.opacity = 0;
+      
+      setTimeout(() => {
+        contentText.textContent = tabContents[tabId];
+        contentText.style.opacity = 1;
+      }, 200);
+
+      // Buttons transition
+      const tabs = ['precautions', 'intelligence', 'specializations'];
+      tabs.forEach(id => {
+        const btn = document.getElementById(`tab-btn-${id}`);
+        if (id === tabId) {
+          btn.className = "px-8 py-4 text-sm font-bold text-slate-800 bg-white border-t border-x border-slate-200 rounded-t-xl -mb-[1px] transition-all duration-300";
+        } else {
+          btn.className = "px-8 py-4 text-sm font-semibold text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-t-xl transition-all duration-300";
+        }
+      });
+    }
+
+    async function loadComponent(id, file) {
+      try {
+        const response = await fetch(file);
+        if (!response.ok) throw new Error('Network response was not ok');
+        const text = await response.text();
+        document.getElementById(id).innerHTML = text;
+      } catch (error) {
+        console.error(`Error loading component ${file}:`, error);
+      }
+    }
+
+    // Initialize components
+    async function init() {
+      await loadComponent('header', 'components/header.html');
+      await loadComponent('footer', 'components/footer.html');
+      
+      // Update active state in nav for Services link
+      setTimeout(() => {
+        const navLinks = document.querySelectorAll('header nav a');
+        navLinks.forEach(link => {
+          if (link.textContent.trim() === 'Services') {
+            link.classList.remove('text-slate-300', 'hover:text-white');
+            link.classList.add('text-primary');
+          } else if (link.textContent.trim() === 'Home') {
+            link.classList.remove('text-primary');
+            link.classList.add('text-slate-300', 'hover:text-white');
+          }
+        });
+      }, 500); // small delay to ensure header is fully loaded
+    }
+
+    init();
+  </script>
+</body>
+</html>
