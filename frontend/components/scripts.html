@@ -1,0 +1,45 @@
+<script>
+  // Banner Carousel Logic
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+  const indicators = document.querySelectorAll('.indicator');
+  let slideInterval;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.style.opacity = i === index ? '1' : '0';
+      slide.classList.toggle('active', i === index);
+    });
+    indicators.forEach((indicator, i) => {
+      if (i === index) {
+        indicator.classList.remove('bg-white/50', 'hover:bg-white/80', 'w-2.5');
+        indicator.classList.add('bg-primary', 'w-8');
+      } else {
+        indicator.classList.remove('bg-primary', 'w-8');
+        indicator.classList.add('bg-white/50', 'hover:bg-white/80', 'w-2.5');
+      }
+    });
+    currentSlide = index;
+  }
+
+  function nextSlide() {
+    showSlide((currentSlide + 1) % slides.length);
+  }
+
+  function prevSlide() {
+    showSlide((currentSlide - 1 + slides.length) % slides.length);
+  }
+
+  function goToSlide(index) {
+    showSlide(index);
+    resetInterval();
+  }
+
+  function resetInterval() {
+    clearInterval(slideInterval);
+    slideInterval = setInterval(nextSlide, 5000); // 5 seconds
+  }
+
+  // Start auto slide
+  resetInterval();
+</script>

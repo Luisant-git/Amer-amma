@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amer Amma - Premium Automobile Body Building</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FBBF24',
+            primaryHover: '#F59E0B',
+            secondary: '#0F172A',
+            footer: '#020617',
+            accent: '#EF4444',
+            accentHover: '#DC2626',
+            surface: '#F8FAFC',
+          },
+          boxShadow: {
+            'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',
+            'glow': '0 0 20px rgba(251, 191, 36, 0.3)',
+          },
+          animation: {
+            'marquee': 'marquee 25s linear infinite',
+          },
+          keyframes: {
+            marquee: {
+              '0%': { transform: 'translateX(0%)' },
+              '100%': { transform: 'translateX(-100%)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-surface text-slate-800">
+  
+  <!-- Component Placeholders -->
+  <div id="header"></div>
+  <div id="hero"></div>
+  <div id="strengths"></div>
+  <div id="industries"></div>
+  <div id="partners"></div>
+  <div id="news_location"></div>
+  <div id="footer"></div>
+
+  <!-- Dynamic Component Loader -->
+  <script>
+    async function loadComponent(id, file) {
+      try {
+        const response = await fetch(file);
+        if (!response.ok) throw new Error('Network response was not ok');
+        const text = await response.text();
+        document.getElementById(id).innerHTML = text;
+      } catch (error) {
+        console.error(`Error loading component ${file}:`, error);
+      }
+    }
+
+    async function loadScripts() {
+      try {
+        const scriptRes = await fetch('components/scripts.html');
+        const scriptText = await scriptRes.text();
+        
+        // Execute the script by creating a new script element
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = scriptText;
+        const scripts = tempDiv.getElementsByTagName('script');
+        
+        for (let i = 0; i < scripts.length; i++) {
+          const newScript = document.createElement('script');
+          newScript.text = scripts[i].text;
+          document.body.appendChild(newScript);
+        }
+      } catch (error) {
+        console.error('Error loading scripts component:', error);
+      }
+    }
+
+    // Initialize all components
+    async function init() {
+      // Load the UI components
+      const components = ['header', 'hero', 'strengths', 'industries', 'partners', 'news_location', 'footer'];
+      for (const comp of components) {
+        await loadComponent(comp, `components/${comp}.html`);
+      }
+      
+      // Load Scripts after DOM is populated
+      await loadScripts();
+    }
+
+    init();
+  </script>
+</body>
+</html>
