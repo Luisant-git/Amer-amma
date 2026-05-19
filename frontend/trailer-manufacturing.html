@@ -72,11 +72,35 @@
           </p>
         </div>
         
-        <!-- Breadcrumbs inside banner -->
-        <div class="text-sm text-slate-300 font-medium bg-white/5 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10 w-max flex items-center gap-2">
-          <a href="index.html" class="hover:text-primary transition-colors">Home</a>
-          <span class="text-slate-500">></span>
-          <span class="text-primary font-semibold">Trailer Manufacturing</span>
+        <!-- Breadcrumbs and Hover Share Menu inside banner -->
+        <div class="flex items-center gap-4">
+          <div class="text-sm text-slate-300 font-medium bg-white/5 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10 w-max flex items-center gap-2">
+            <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+            <span class="text-slate-500">></span>
+            <span class="text-primary font-semibold">Trailer Manufacturing</span>
+          </div>
+          
+          <!-- Hover Share Menu -->
+          <div class="relative flex items-center group/share cursor-pointer py-1">
+            <div class="flex items-center gap-2 max-w-0 overflow-hidden opacity-0 pointer-events-none group-hover/share:max-w-[200px] group-hover/share:opacity-100 group-hover/share:pointer-events-auto transition-all duration-500 ease-in-out pr-0 group-hover/share:pr-2">
+              <a href="#" onclick="event.stopPropagation(); window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), '_blank')" class="w-8 h-8 rounded-full bg-white/10 hover:bg-primary hover:text-secondary flex items-center justify-center text-slate-300 transition-all duration-200 text-xs">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="#" onclick="event.stopPropagation(); window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(window.location.href), '_blank')" class="w-8 h-8 rounded-full bg-white/10 hover:bg-primary hover:text-secondary flex items-center justify-center text-slate-300 transition-all duration-200 text-xs">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+              <a href="#" onclick="event.stopPropagation(); window.open('https://plus.google.com/share?url=' + encodeURIComponent(window.location.href), '_blank')" class="w-8 h-8 rounded-full bg-white/10 hover:bg-primary hover:text-secondary flex items-center justify-center text-slate-300 transition-all duration-200 text-xs">
+                <i class="fa-brands fa-google-plus-g"></i>
+              </a>
+              <a href="#" onclick="event.stopPropagation(); window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(window.location.href), '_blank')" class="w-8 h-8 rounded-full bg-white/10 hover:bg-primary hover:text-secondary flex items-center justify-center text-slate-300 transition-all duration-200 text-xs">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+            </div>
+            <div class="text-sm text-slate-300 font-medium bg-white/5 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10 hover:bg-white/10 hover:text-primary transition-all duration-200 flex items-center gap-2 select-none">
+              <i class="fa-solid fa-share-nodes text-xs"></i>
+              <span>Share</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
