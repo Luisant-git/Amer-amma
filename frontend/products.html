@@ -224,16 +224,16 @@
       if (productsGrid) {
         productsGrid.innerHTML = productsData.map(product => `
           <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 hover:shadow-soft hover:-translate-y-1.5 transition-all duration-300 group flex flex-col h-full justify-between">
-            <a href="${product.url}" class="block h-64 overflow-hidden relative bg-slate-100 flex-shrink-0">
+            <a href="${product.url}" class="block h-52 sm:h-60 lg:h-64 overflow-hidden relative bg-slate-100 flex-shrink-0">
               <img src="${product.image}" alt="${product.title}" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" loading="lazy">
             </a>
-            <div class="p-8 flex-grow flex flex-col justify-between">
+            <div class="p-6 sm:p-8 flex-grow flex flex-col justify-between">
               <div>
-                <h3 class="font-bold text-xl text-secondary mb-4 group-hover:text-primary transition-colors">
+                <h3 class="font-bold text-lg sm:text-xl text-secondary mb-4 group-hover:text-primary transition-colors">
                   <a href="${product.url}">${product.title}</a>
                 </h3>
               </div>
-              <a href="${product.url}" class="inline-flex items-center font-semibold text-primary hover:text-primaryHover transition-colors w-max group/link mt-auto">
+              <a href="${product.url}" class="inline-flex items-center font-semibold text-primary hover:text-primaryHover transition-colors w-max group/link mt-auto text-sm sm:text-base">
                 Read More <i class="fa-solid fa-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform"></i>
               </a>
             </div>
