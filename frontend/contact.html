@@ -235,10 +235,24 @@
   <script>
     async function loadComponent(id, file) {
       try {
+        const cacheKey = `comp_${id}`;
+        const cachedHtml = localStorage.getItem(cacheKey);
+        
+        // 1. Render from cache instantly if available
+        if (cachedHtml) {
+          document.getElementById(id).innerHTML = cachedHtml;
+        }
+
+        // 2. Fetch fresh content over network
         const response = await fetch(file);
         if (!response.ok) throw new Error('Network response was not ok');
         const text = await response.text();
-        document.getElementById(id).innerHTML = text;
+        
+        // 3. Update DOM and cache only if content has changed (prevents screen flashes)
+        if (text !== cachedHtml) {
+          document.getElementById(id).innerHTML = text;
+          localStorage.setItem(cacheKey, text);
+        }
       } catch (error) {
         console.error(`Error loading component ${file}:`, error);
       }
@@ -265,19 +279,17 @@
       await loadComponent('header', 'components/header.html');
       await loadComponent('footer', 'components/footer.html');
       
-      // Update active state in nav for Contact link
-      setTimeout(() => {
-        const navLinks = document.querySelectorAll('header nav a');
-        navLinks.forEach(link => {
-          if (link.textContent.trim() === 'Contact') {
-            link.classList.remove('text-slate-300', 'hover:text-white');
-            link.classList.add('text-primary');
-          } else if (link.textContent.trim() === 'Home') {
-            link.classList.remove('text-primary');
-            link.classList.add('text-slate-300', 'hover:text-white');
-          }
-        });
-      }, 500); // small delay to ensure header is fully loaded
+      // Update active state in nav immediately (no delay needed because header has been awaited!)
+      const navLinks = document.querySelectorAll('header nav a');
+      navLinks.forEach(link => {
+        if (link.textContent.trim() === 'Contact') {
+          link.classList.remove('text-slate-300', 'hover:text-white');
+          link.classList.add('text-primary');
+        } else if (link.textContent.trim() === 'Home') {
+          link.classList.remove('text-primary');
+          link.classList.add('text-slate-300', 'hover:text-white');
+        }
+      });
     }
 
     init();

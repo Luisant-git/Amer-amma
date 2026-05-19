@@ -204,10 +204,24 @@
 
     async function loadComponent(id, file) {
       try {
+        const cacheKey = `comp_${id}`;
+        const cachedHtml = localStorage.getItem(cacheKey);
+        
+        // 1. Render from cache instantly if available
+        if (cachedHtml) {
+          document.getElementById(id).innerHTML = cachedHtml;
+        }
+
+        // 2. Fetch fresh content over network
         const response = await fetch(file);
         if (!response.ok) throw new Error('Network response was not ok');
         const text = await response.text();
-        document.getElementById(id).innerHTML = text;
+        
+        // 3. Update DOM and cache only if content has changed (prevents screen flashes)
+        if (text !== cachedHtml) {
+          document.getElementById(id).innerHTML = text;
+          localStorage.setItem(cacheKey, text);
+        }
       } catch (error) {
         console.error(`Error loading component ${file}:`, error);
       }
@@ -241,19 +255,17 @@
         `).join('');
       }
 
-      // Update active state in nav to highlight "Special Products"
-      setTimeout(() => {
-        const navLinks = document.querySelectorAll('header nav a');
-        navLinks.forEach(link => {
-          if (link.textContent.trim() === 'Special Products') {
-            link.classList.remove('text-slate-300');
-            link.classList.add('text-primary');
-          } else if (link.textContent.trim() === 'Home') {
-            link.classList.remove('text-primary');
-            link.classList.add('text-slate-300');
-          }
-        });
-      }, 500); // small delay to ensure header is loaded
+      // Update active state in nav to highlight "Special Products" immediately (no delay needed!)
+      const navLinks = document.querySelectorAll('header nav a');
+      navLinks.forEach(link => {
+        if (link.textContent.trim() === 'Special Products') {
+          link.classList.remove('text-slate-300');
+          link.classList.add('text-primary');
+        } else if (link.textContent.trim() === 'Home') {
+          link.classList.remove('text-primary');
+          link.classList.add('text-slate-300');
+        }
+      });
     }
 
     init();
